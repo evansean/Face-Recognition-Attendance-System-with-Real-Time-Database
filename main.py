@@ -60,7 +60,6 @@ while True:
     # Overlaying different graphics for display (Modes: 0,  1 , 2 , 3)
     imgBackground[162:162+480,55:55+640] = img
     imgBackground[44:44+633,808:808+414] = imgModeList[modeType]
-
     if faceCurFrame:
         for encodeFace, faceLoc in zip(encodeCurFrame,faceCurFrame):
             matches = face_recognition.compare_faces(encodeListKnown,encodeFace)
@@ -76,7 +75,7 @@ while True:
                 cvzone.cornerRect(imgBackground,bbox, rt=0)
                 id = studentIds[matchIndex]
                 if counter == 0:
-                    cvzone.putTextRect(imgBackground,"Loading...", (275,400))
+                    cvzone.putTextRect(imgBackground,"Loading...", (275,400), colorR= (255,0,0))
                     cv2.imshow("Face Attendance", imgBackground)
                     cv2.waitKey(1)
                     counter=1
