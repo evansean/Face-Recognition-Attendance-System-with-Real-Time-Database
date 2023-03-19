@@ -13,7 +13,7 @@ firebase_admin.initialize_app(creds.cred,{
     'storageBucket': 'faceattendancerealtime-70b36.appspot.com'
 
 })
-# Importing student images into a list
+# Importing student images into a list (Must be 216px by 216px)
 folderPath = 'Images'
 pathList = os.listdir(folderPath)
 imgList = []
